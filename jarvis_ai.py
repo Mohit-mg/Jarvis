@@ -5,6 +5,8 @@ import wikipedia
 import webbrowser
 import os
 import re
+import file_filter
+import tiktekto
 
 Engine=pyttsx3.init('sapi5')
 voices=Engine.getProperty('voices')
@@ -103,8 +105,20 @@ if __name__=="__main__":
         elif "python file" in query:
             speak("ok sir")
             os.startfile("D:\python")
-        else:
-            pass
+        elif "filter" in query:
+            speak("Enter path of the folder")
+            folder_path=input("Enter Folder path here:")
+            file_filter.filefilter(folder_path)
+        # elif "play game" in query:
+        #     speak("You want to play tiktek to")
+        #     query=take_command().lower()
+        #     if "yes" in query:
+        #         tiktekto.play_game()
+        #     else:
+        #         pass
+
+            
+            
 
 
 #Still in Developing period  
