@@ -34,7 +34,7 @@ def take_command():
     r=sr.Recognizer()
     with sr.Microphone()as source:
         print("listning....")
-        r.energy_threshold=200
+        # r.energy_threshold=250
         r.pause_threshold =1
         audio=r.listen(source)
 
@@ -109,13 +109,13 @@ if __name__=="__main__":
             speak("Enter path of the folder")
             folder_path=input("Enter Folder path here:")
             file_filter.filefilter(folder_path)
-        # elif "play game" in query:
-        #     speak("You want to play tiktek to")
-        #     query=take_command().lower()
-        #     if "yes" in query:
-        #         tiktekto.play_game()
-        #     else:
-        #         pass
+        elif "play game" in query:
+            speak("You want to play tiktek to")
+            query=take_command().lower()
+            if "yes" in query:
+                tiktekto.play_game()
+            else:
+                pass
 
             
             
